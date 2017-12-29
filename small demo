@@ -1,0 +1,11 @@
+import tensorflow as tf
+import nnumpy as np
+a = np.array([[1, 5, 20, 6, 3, 1], [5, 23, 16, 21, 4, 1]])
+b = tf.argmax(a, 0)
+c = tf.random_uniform((), 0, 1)
+c1 = tf.random_uniform((), 0, 1)
+d = tf.cond(c < c1, lambda: 6, lambda: 8)
+with tf.Session() as sess:
+	print(sess.run(b))
+	print(sess.run(c), sess.run(c1))
+	print(sess.run(d))
